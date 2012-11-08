@@ -80,13 +80,33 @@ Net::PostcodeNL::WebshopAPI - Postcode.nl Webshop API
     my $number = '';
     my $addition = '';
 
-    print Dumper($api->lookup($zipcode, $number, $addition));
+    my $r = $api->lookup($zipcode, $number, $addition);
+
+    if ($r->is_error) {
+        die $r->err_str;
+    }
+    else {
+        say $r->street;
+        say $r->houseNumber;
+        say $r->houseNumberAddition;
+    }
 
 =head1 DESCRIPTION
 
 Retrieves information about a zipcode from Postcode.nl
 
 You need to apply for a key and secret from L<http://api.postcode.nl>.
+
+=head1 METHODS
+
+=head2 $r = $self->lookup($zipcode, $number, $addition);
+
+Returns a L<Net::PostcodeNL::WebshopAPI::Response> for the combination of
+C<$zipcode>, C<$number> and C<$addition>.
+
+=head1 SEE ALSO
+
+L<Net::PostcodeNL::WebshopAPI::Response>
 
 =head1 AUTHOR
 
