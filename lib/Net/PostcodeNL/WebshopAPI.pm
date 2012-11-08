@@ -7,6 +7,8 @@ use LWP::UserAgent;
 use JSON::XS;
 use URI::Template;
 
+use Net::PostcodeNL::WebshopAPI::Response;
+
 our $VERSION = '0.2';
 
 my $AGENT = __PACKAGE__ . '/' . $VERSION;
@@ -48,9 +50,9 @@ sub lookup {
     my $resp = $ua->get($uri);
 
     if ($resp->code == 200 && $resp->header('Content-Type') eq 'application/json') {
-        return decode_json($resp->decoded_content);
+        return Net::PostcodeNL::WebshopAPI::Response->new(decode_json($resp->decoded_content));
     }
-    return decode_json($resp->decoded_content);
+    return Net::PostcodeNL::WebshopAPI::Response->new(decode_json($resp->decoded_content));
 }
 
 sub api_url {
