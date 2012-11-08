@@ -60,3 +60,38 @@ sub api_url {
 }
 
 1;
+
+=head1 NAME
+
+Net::PostcodeNL::WebshopAPI - Postcode.nl Webshop API
+
+=head1 SYNOPSYS
+
+    use Net::PostcodeNL::WebshopAPI;
+
+    my $api = Net::PostcodeNL::WebshopAPI->new(
+        api_key    => 'insert api key',
+        api_secret => 'insert api secret',
+    );
+
+    my $zipcode = '';
+    my $number = '';
+    my $addition = '';
+
+    print Dumper($api->lookup($zipcode, $number, $addition));
+
+=head1 DESCRIPTION
+
+Retrieves information about a zipcode from Postcode.nl
+
+You need to apply for a key and secret from L<http://api.postcode.nl>.
+
+=head1 AUTHOR
+
+Peter Stuifzand <peter@stuifzand.eu>
+
+=head1 LICENSE
+
+GPL version 3 or later.
+
+=cut
