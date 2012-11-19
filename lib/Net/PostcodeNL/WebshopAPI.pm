@@ -114,6 +114,6 @@ Peter Stuifzand <peter@stuifzand.eu>
 
 =head1 LICENSE
 
-GPL version 3 or later.
+Same as Perl.
 
 =cut

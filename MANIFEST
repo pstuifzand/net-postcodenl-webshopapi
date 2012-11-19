@@ -4,3 +4,5 @@ MANIFEST
 Build.PL
 README
 example.pl
+META.yml
+META.json
