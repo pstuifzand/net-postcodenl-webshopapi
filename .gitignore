@@ -1,0 +1,6 @@
+/Net-PostcodeNL-WebshopAPI-*
+/.build
+/_build*
+/Build
+MYMETA.*
+!META.json
