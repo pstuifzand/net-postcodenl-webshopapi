@@ -9,7 +9,7 @@ use URI::Template;
 
 use Net::PostcodeNL::WebshopAPI::Response;
 
-our $VERSION = '0.2.0';
+our $VERSION = '0.0201';
 
 my $AGENT = __PACKAGE__ . '/' . $VERSION;
 
